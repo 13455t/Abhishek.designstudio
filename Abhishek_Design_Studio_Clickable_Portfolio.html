@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Abhishek Design Studio</title>
+<style>
+body{margin:0;background:#080812;color:#fff;font-family:Arial,sans-serif}
+nav{position:sticky;top:0;background:#0f1022;padding:16px 30px;border-bottom:1px solid #6d28d9}
+.logo{font-size:28px;font-weight:700;color:#fff}.logo span{color:#c084fc}
+.hero{padding:70px 20px;text-align:center;background:linear-gradient(135deg,#120b2b,#090912)}
+h1{font-size:48px}.gold{color:#f59e0b}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:18px;padding:30px}
+.card{background:#15162d;border:2px solid #7c3aed;border-radius:18px;padding:24px;text-align:center;cursor:pointer;transition:.3s}
+.card:hover{transform:translateY(-8px);border-color:#f59e0b;box-shadow:0 0 30px rgba(245,158,11,.4)}
+.section{display:none;padding:30px}
+.section.active{display:block}
+.samples{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.sample{height:150px;border-radius:14px;background:linear-gradient(135deg,#7c3aed,#1d4ed8);display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:bold}
+</style>
+</head>
+<body>
+<nav><div class="logo">Abhishek <span>Design Studio</span></div></nav>
+
+<div class="hero">
+<h1>Premium <span class="gold">Graphic Design</span> Portfolio</h1>
+<p>Click a category below to view work samples.</p>
+</div>
+
+<div class="grid">
+<div class="card" onclick="show('logos')">🎨<h3>Logo Design</h3></div>
+<div class="card" onclick="show('posters')">🖼️<h3>Poster Design</h3></div>
+<div class="card" onclick="show('banners')">📐<h3>Banner Design</h3></div>
+<div class="card" onclick="show('thumbs')">📺<h3>Thumbnails</h3></div>
+<div class="card" onclick="show('social')">📱<h3>Social Media</h3></div>
+</div>
+
+<div id="logos" class="section active"><h2>Logo Designs</h2><div class="samples">
+<div class="sample">Luxury Logo</div><div class="sample">AI Logo</div><div class="sample">Minimal Logo</div><div class="sample">Mascot Logo</div></div></div>
+
+<div id="posters" class="section"><h2>Poster Designs</h2><div class="samples">
+<div class="sample">Movie Poster</div><div class="sample">Event Poster</div><div class="sample">Gym Poster</div><div class="sample">Sale Poster</div></div></div>
+
+<div id="banners" class="section"><h2>Banner Designs</h2><div class="samples">
+<div class="sample">Website Banner</div><div class="sample">Facebook Banner</div><div class="sample">Ads Banner</div></div></div>
+
+<div id="thumbs" class="section"><h2>YouTube Thumbnails</h2><div class="samples">
+<div class="sample">Finance</div><div class="sample">Gaming</div><div class="sample">AI</div></div></div>
+
+<div id="social" class="section"><h2>Social Media</h2><div class="samples">
+<div class="sample">Instagram</div><div class="sample">Carousel</div><div class="sample">Story</div></div></div>
+
+<script>
+function show(id){
+ document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+ document.getElementById(id).classList.add('active');
+ document.getElementById(id).scrollIntoView({behavior:'smooth'});
+}
+</script>
+</body></html>
